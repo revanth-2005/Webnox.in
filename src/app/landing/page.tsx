@@ -3,6 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import QuoteSection from "../components/QuoteSection";
+import ClientsSection from "../components/ClientsSection";
+import NumbersSection from "../components/NumbersSection";
+import ReachMoreSection from "../components/ReachMoreSection";
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false);
@@ -480,6 +484,12 @@ export default function LandingPage() {
         </div>
       </div>
     </section>
+   
+   
+    <QuoteSection />
+    <ClientsSection />
+    <NumbersSection />
+     <ReachMoreSection />
     </>
   );
 }
