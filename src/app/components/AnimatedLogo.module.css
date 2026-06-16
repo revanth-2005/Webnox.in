@@ -1,0 +1,151 @@
+.logoWrapper {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  /* Total height matches the cropped content height (742 out of 888) */
+  height: calc(var(--logo-h) * 742 / 888);
+  /* Keep total width constant to prevent layout shifts and keep layout centered */
+  width: calc(var(--logo-h) * 2491 / 888);
+  /* Initial gap between icon and text (17px out of 888) */
+  gap: calc(var(--logo-h) * 17 / 888);
+  transition: gap 2.2s cubic-bezier(0.25, 1, 0.5, 1);
+  overflow: visible;
+  user-select: none;
+}
+
+.logoWrapper.animate {
+  gap: 0;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: calc(var(--logo-h) * 742 / 888);
+  width: calc(var(--logo-h) * 697 / 888);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.wIconGroup {
+  width: calc(var(--logo-h) * 697 / 888);
+  height: calc(var(--logo-h) * 530 / 888);
+  position: relative;
+  flex-shrink: 0;
+  transform: translateY(0) scale(1);
+  transform-origin: center center;
+  /* Smooth transition with bezier easing, matching gap/opacity timing */
+  transition: transform 2.2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.logoWrapper.animate .wIconGroup {
+  /* Translate to the vertical center of the 742px wrapper, and scale up smoothly to 1.35x */
+  transform: translateY(calc(var(--logo-h) * 106 / 888)) scale(1.35);
+}
+
+.wIconBox {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.wDot {
+  position: absolute;
+  width: calc(var(--logo-h) * 56 / 888);
+  height: calc(var(--logo-h) * 56 / 888);
+  background-color: #ffffff;
+  /* Align with bottom right tip of the W shape */
+  bottom: calc(var(--logo-h) * 38 / 888);
+  right: calc(var(--logo-h) * -66 / 888);
+  border-radius: calc(var(--logo-h) * 5 / 888);
+  /* Initially hidden (opacity 0) and offset to the right */
+  opacity: 0;
+  transform: translateX(calc(var(--logo-h) * 120 / 888));
+  /* Start dot animation after a 0.8s delay so it is staggered; total time matches 2.2s */
+  transition: 
+    opacity 1.4s cubic-bezier(0.25, 1, 0.5, 1) 0.8s,
+    transform 1.4s cubic-bezier(0.25, 1, 0.5, 1) 0.8s;
+  will-change: opacity, transform;
+}
+
+.logoWrapper.animate .wDot {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.wSubtitleBox {
+  width: calc(var(--logo-h) * 697 / 888);
+  /* Subtitle is 164px height (802 - 638) */
+  height: calc(var(--logo-h) * 164 / 888);
+  /* Gap of 48px between W icon box bottom (590) and subtitle top (638) */
+  margin-top: calc(var(--logo-h) * 48 / 888);
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  opacity: 1;
+  transition: opacity 1.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity;
+}
+
+.logoWrapper.animate .wSubtitleBox {
+  opacity: 0;
+}
+
+.wIconBox img {
+  position: absolute;
+  width: calc(var(--logo-h) * 2649 / 888);
+  height: var(--logo-h) !important;
+  left: calc(var(--logo-h) * -54 / 888);
+  top: calc(var(--logo-h) * -60 / 888);
+  max-width: none !important;
+  display: block;
+}
+
+.wSubtitleBox img {
+  position: absolute;
+  width: calc(var(--logo-h) * 2649 / 888);
+  height: var(--logo-h) !important;
+  left: calc(var(--logo-h) * -54 / 888);
+  top: calc(var(--logo-h) * -638 / 888);
+  max-width: none !important;
+  display: block;
+}
+
+.textBox {
+  width: calc(var(--logo-h) * 1777 / 888);
+  height: calc(var(--logo-h) * 742 / 888);
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  opacity: 1;
+  transform: translateX(0);
+  transition: 
+    width 2.2s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 1.6s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 2.2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: width, opacity, transform;
+}
+
+.logoWrapper.animate .textBox {
+  width: 0;
+  opacity: 0;
+  transform: translateX(calc(var(--logo-h) * 40 / 888));
+}
+
+.textBox img {
+  position: absolute;
+  width: calc(var(--logo-h) * 2649 / 888);
+  height: var(--logo-h) !important;
+  left: calc(var(--logo-h) * -768 / 888);
+  top: calc(var(--logo-h) * -60 / 888);
+  max-width: none !important;
+  display: block;
+}
+
+.logoImg {
+  pointer-events: none;
+  user-select: none;
+}

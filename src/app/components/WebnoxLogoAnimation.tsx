@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+import AnimatedLogo from "./AnimatedLogo";
 import styles from "./WebnoxLogoAnimation.module.css";
 
 export default function WebnoxLogoAnimation() {
@@ -10,15 +10,15 @@ export default function WebnoxLogoAnimation() {
   const [isFadingOut, setIsFadingOut] = useState(false);
 
   useEffect(() => {
-    // 4500ms delay before start of fade-out (dissolve) transition
+    // 3700ms delay before start of fade-out (dissolve) transition of splash container
     const fadeTimeout = setTimeout(() => {
       setIsFadingOut(true);
-    }, 4500);
+    }, 3700);
 
-    // 4500ms delay + 300ms transition duration = 4800ms before navigating
+    // 3700ms delay + 300ms transition duration = 4000ms before navigating
     const navTimeout = setTimeout(() => {
       router.push("/landing");
-    }, 4800);
+    }, 4000);
 
     return () => {
       clearTimeout(fadeTimeout);
@@ -29,16 +29,10 @@ export default function WebnoxLogoAnimation() {
   return (
     <div className={`${styles.splashContainer} ${isFadingOut ? styles.fadeOut : ""}`}>
       <div className={styles.logoGroup}>
-        {/* Full Official WEBNOX Logo (includes <WEBNOX and TECHNOLOGIES PVT LTD subtitle) */}
-        <Image
-          src="/webnox-logo.png"
-          alt="WEBNOX Technologies Logo"
-          width={2649}
-          height={888}
-          className={styles.logoImage}
-          priority
-        />
+        {/* Animated WEBNOX Logo which scales up W icon and fades out text */}
+        <AnimatedLogo height="min(18vw, 140px)" delay={800} />
       </div>
     </div>
   );
 }
+

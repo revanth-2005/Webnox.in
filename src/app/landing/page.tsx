@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import AnimatedLogo from "../components/AnimatedLogo";
+
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false);
@@ -150,15 +152,7 @@ export default function LandingPage() {
       >
         <div className="flex items-center" style={{ gap: '8px' }}>
           <div className="flex items-center select-none" style={{ paddingRight: '8px' }}>
-            <Image
-              src="/webnox-logo-official.png"
-              alt="Webnox Technologies Pvt Ltd"
-              width={120}
-              height={46}
-              className="object-contain"
-              style={{ filter: 'brightness(0) invert(1)' }}
-              priority
-            />
+            <AnimatedLogo height={36} delay={800} />
           </div>
           <div style={{
             width: '1px',
