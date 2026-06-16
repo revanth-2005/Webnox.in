@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import AnimatedLogo from "../components/AnimatedLogo";
+import Footer from "../components/Footer";
 
 
 export default function LandingPage() {
@@ -854,7 +855,11 @@ export default function LandingPage() {
 
           </div>
         </div>
+
       </section>
+
+      {/* ─────────────── FOOTER ─────────────── */}
+      <Footer />
     </>
   );
 }
