@@ -2,7 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 import AnimatedLogo from "../components/AnimatedLogo";
 import Footer from "../components/Footer";
 
@@ -10,6 +17,7 @@ import QuoteSection from "../components/QuoteSection";
 import ClientsSection from "../components/ClientsSection";
 import NumbersSection from "../components/NumbersSection";
 import ReachMoreSection from "../components/ReachMoreSection";
+import CertificationsOrbit from "../components/CertificationsOrbit";
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false);
@@ -17,9 +25,41 @@ export default function LandingPage() {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
+  const textSectionRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+    const textSection = textSectionRef.current;
+    if (!textSection) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        textSection.children,
+        {
+          y: 40,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.0,
+          stagger: 0.12,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: textSection,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }, textSection);
+
+    return () => ctx.revert();
+  }, [mounted]);
 
   useEffect(() => {
     const controlNavbar = () => {
@@ -779,7 +819,7 @@ export default function LandingPage() {
         }}>
 
           {/* LEFT: Text Content */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+          <div ref={textSectionRef} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
 
             {/* Built To Scale Badge */}
             <div style={{ marginBottom: '32px' }}>
@@ -838,25 +878,10 @@ export default function LandingPage() {
           {/* RIGHT: Concentric Circles with Certification Badges */}
           <div style={{
             position: 'relative',
-            width: '100%',
-            paddingBottom: '100%', // square aspect ratio
+            width: '85%',
+            margin: '0 auto',
           }}>
-            {/* The full circle image as background */}
-            <div style={{
-              position: 'absolute',
-              inset: 0,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-              <Image
-                src="/full-circle.png"
-                alt="Certification orbit circles"
-                fill
-                className="object-contain"
-              />
-            </div>
-
+            <CertificationsOrbit />
           </div>
         </div>
 
