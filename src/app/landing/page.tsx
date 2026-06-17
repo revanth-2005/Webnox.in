@@ -19,6 +19,7 @@ import NumbersSection from "../components/NumbersSection";
 import ReachMoreSection from "../components/ReachMoreSection";
 import AboutSection from "../components/AboutSection";
 import BrandBuildSection from "../components/BrandBuildSection";
+import WebServicesSection from "../components/WebServicesSection";
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false);
@@ -770,6 +771,7 @@ export default function LandingPage() {
       <NumbersSection />
       <ReachMoreSection />
       <BrandBuildSection />
+      <WebServicesSection />
 
       {/* ─────────────── FOOTER ─────────────── */}
       <Footer />
