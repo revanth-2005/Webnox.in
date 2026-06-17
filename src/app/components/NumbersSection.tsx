@@ -247,7 +247,7 @@ function StatCard({
       }} />
 
       {/* Text Content */}
-      <div style={{ position: "relative", zIndex: 1, maxWidth: config.textWidth, display: "flex", flexDirection: "column", gap: "6px" }}>
+      <div className="stat-card-text" style={{ position: "relative", zIndex: 1, maxWidth: config.textWidth, display: "flex", flexDirection: "column", gap: "6px" }}>
         <div>
           <div style={{
             fontFamily: FONT_SANS,
@@ -259,7 +259,7 @@ function StatCard({
           }}>
             {animated}{suffix}
           </div>
-          <div style={{
+          <div className="stat-card-label" style={{
             fontFamily: FONT_SANS,
             fontSize: "22px",
             fontWeight: 300,
@@ -303,7 +303,7 @@ function StatCard({
       </div>
 
       {/* Absolutely Positioned Illustration Image */}
-      <div style={config.imageStyle}>
+      <div className="stat-card-image" style={config.imageStyle}>
         <Image
           src={imgSrc}
           alt={label}
@@ -398,38 +398,24 @@ export default function NumbersSection() {
         </h2>
 
         {/* ── BENTO LAYOUT: tall card left + 2-row right grid ── */}
-        <div style={{
-          display: "flex",
-          gap: "16px",
-          marginBottom: "16px",
-        }}>
+        <div className="stats-bento-grid">
           {/* Col 1 — 1450+ Websites — full height tall card */}
-          <div style={{ width: "21%", flexShrink: 0 }}>
+          <div className="stats-left-col">
             <StatCard {...topStats[0]} tall animStart={animStart} />
           </div>
 
           {/* Right section — 2 stacked rows */}
-          <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div className="stats-right-col">
 
             {/* Row 1: small | small | BIG — 1fr 1fr 1.5fr */}
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr 1.5fr",
-              gap: "16px",
-              flex: 1,
-            }}>
+            <div className="stats-row-1">
               <StatCard {...topStats[1]} animStart={animStart} />
               <StatCard {...topStats[2]} animStart={animStart} />
               <StatCard {...topStats[3]} animStart={animStart} />
             </div>
 
             {/* Row 2: BIG | small | small — 1.5fr 1fr 1fr */}
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "1.5fr 1fr 1fr",
-              gap: "16px",
-              flex: 1,
-            }}>
+            <div className="stats-row-2">
               <StatCard {...bottomStats[0]} animStart={animStart} />
               <StatCard {...bottomStats[1]} animStart={animStart} />
               <StatCard {...bottomStats[2]} animStart={animStart} />
@@ -440,6 +426,7 @@ export default function NumbersSection() {
 
         {/* ── WIDE BOTTOM CARD: 100% Customisable Designs ── */}
         <div
+          className="stats-bottom-card"
           style={{
             background: "linear-gradient(135deg, #17426E 0%, #051A47 100%)",
             border: "1px solid rgba(77,166,255,0.12)",
@@ -478,7 +465,7 @@ export default function NumbersSection() {
           }} />
 
           {/* LEFT: Big percentage text */}
-          <div style={{ flexShrink: 0 }}>
+          <div style={{ flexShrink: 0 }} className="wide-bottom-left">
             <div style={{
               fontFamily: FONT_SANS,
               fontSize: "clamp(52px, 5.5vw, 80px)",
@@ -489,7 +476,7 @@ export default function NumbersSection() {
             }}>
               100%
             </div>
-            <div style={{
+            <div className="wide-bottom-label" style={{
               fontFamily: FONT_SANS,
               fontSize: "22px",
               fontWeight: 300,
@@ -508,7 +495,7 @@ export default function NumbersSection() {
               marginTop: "8px",
               marginBottom: "2px",
               width: "100%",
-            }}>
+            }} className="wide-bottom-divider">
               <span style={{ color: "#ffffff", fontSize: "9px", opacity: 0.7, lineHeight: 1 }}>✦</span>
               <div style={{
                 height: "1px",
@@ -519,13 +506,8 @@ export default function NumbersSection() {
           </div>
 
           {/* CENTER: 8grid.png design tool image */}
-          <div style={{
-            flex: 1,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}>
-            <div style={{ position: "relative", width: "440px", height: "200px" }}>
+          <div className="wide-bottom-illustration">
+            <div style={{ position: "relative", width: "440px", height: "200px", maxWidth: "100%" }}>
               <Image
                 src="/8grid.png"
                 alt="Customisable Design Tool"
@@ -537,7 +519,7 @@ export default function NumbersSection() {
           </div>
 
           {/* RIGHT: Tagline text */}
-          <div style={{ flexShrink: 0, maxWidth: "340px", textAlign: "right" }}>
+          <div style={{ flexShrink: 0, maxWidth: "340px", textAlign: "right" }} className="wide-bottom-right">
             <div style={{
               fontFamily: FONT_SANS,
               fontSize: "clamp(16px, 1.8vw, 26px)",
@@ -568,6 +550,84 @@ export default function NumbersSection() {
           </div>
         </div>
       </div>
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        .stats-bento-grid {
+          display: flex;
+          gap: 16px;
+          margin-bottom: 16px;
+        }
+        .stats-left-col {
+          width: 21%;
+          flex-shrink: 0;
+        }
+        .stats-right-col {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+        .stats-row-1 {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1.5fr;
+          gap: 16px;
+          flex: 1;
+        }
+        .stats-row-2 {
+          display: grid;
+          grid-template-columns: 1.5fr 1fr 1fr;
+          gap: 16px;
+          flex: 1;
+        }
+        @media (max-width: 1023px) {
+          #numbers {
+            padding: 60px 20px 80px !important;
+          }
+          .stats-bento-grid {
+            flex-direction: column;
+            gap: 16px;
+          }
+          .stats-left-col {
+            width: 100%;
+          }
+          .stats-row-1, .stats-row-2 {
+            grid-template-columns: 1fr 1fr;
+          }
+          .stats-bottom-card {
+            flex-direction: column !important;
+            padding: 40px 24px !important;
+            text-align: center;
+          }
+          .wide-bottom-left, .wide-bottom-right {
+            text-align: center !important;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+          }
+          .wide-bottom-divider {
+            justify-content: center;
+          }
+          .wide-bottom-illustration {
+            width: 100%;
+            margin: 20px 0;
+          }
+          .stat-card-text {
+            max-width: 100% !important;
+          }
+          .stat-card-image {
+            opacity: 0.22;
+          }
+          .stat-card-label, .wide-bottom-label {
+            white-space: normal !important;
+            font-size: clamp(16px, 2.5vw, 20px) !important;
+          }
+        }
+        @media (max-width: 639px) {
+          .stats-row-1, .stats-row-2 {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}} />
     </section>
   );
 }

@@ -186,13 +186,14 @@ export default function ClientsSection() {
       </div>
 
       {/* Glow arc image — centered below logos */}
-      <div style={{ marginTop: '3rem', display: 'flex', justifyContent: 'center' }}>
-        <div className="relative" style={{ width: '800px', height: '260px', maxWidth: '90vw' }}>
+      <div style={{ marginTop: '3.5rem', display: 'flex', justifyContent: 'center' }}>
+        <div className="relative w-full max-w-[800px] px-6">
           <Image
             src="/fgfg.png"
             alt="Glow Arc"
-            fill
-            className="object-contain object-center"
+            width={800}
+            height={260}
+            className="w-full h-auto object-contain"
             priority
           />
         </div>

@@ -29,10 +29,11 @@ export default function ReachMoreSection() {
           position: "relative",
           zIndex: 1,
         }}
-        className="flex-col lg:flex-row"
+        className="reach-more-flex-container flex-col lg:flex-row"
       >
         {/* Left Side: Illustration Image */}
         <div
+          className="reach-more-left"
           style={{
             flex: "1",
             width: "100%",
@@ -42,6 +43,7 @@ export default function ReachMoreSection() {
           }}
         >
           <div
+            className="reach-more-image-container"
             style={{
               position: "relative",
               width: "100%",
@@ -61,6 +63,7 @@ export default function ReachMoreSection() {
 
         {/* Right Side: Text & Actions */}
         <div
+          className="reach-more-right"
           style={{
             flex: "1",
             width: "100%",
@@ -72,6 +75,7 @@ export default function ReachMoreSection() {
         >
           {/* Badge (Matches the About section gradient border badge style) */}
           <div
+            className="reach-more-badge-wrap"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -110,6 +114,7 @@ export default function ReachMoreSection() {
 
           {/* Description (Matches the About section body text style, size, weight, color) */}
           <p
+            className="reach-more-desc"
             style={{
               fontFamily: FONT_SANS,
               fontSize: "clamp(13px, 0.88vw, 15px)",
@@ -127,6 +132,7 @@ export default function ReachMoreSection() {
 
           {/* Bottom buttons (Matches original white section mockup style) */}
           <div
+            className="reach-more-buttons-container"
             style={{
               display: "flex",  
               flexWrap: "wrap",
@@ -238,20 +244,46 @@ export default function ReachMoreSection() {
         </div>
       </div>
       
-      {/* Add responsive styles via simple inline media query logic inside css or a style block */}
-      <style jsx global>{`
+      {/* Add responsive styles via dangerouslySetInnerHTML to ensure compatibility */}
+      <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 1023px) {
-          .flex-col {
+          .reach-more-flex-container {
+            display: flex !important;
             flex-direction: column !important;
+          }
+          .reach-more-left, .reach-more-right {
+            display: contents !important;
           }
           #reach-more {
             padding: 60px 20px !important;
           }
+          .reach-more-badge-wrap {
+            order: 1 !important;
+            margin-bottom: 16px !important;
+          }
           .reach-more-heading {
+            order: 2 !important;
             white-space: normal !important;
+            text-align: center !important;
+            margin: 0 auto 16px !important;
+          }
+          .reach-more-image-container {
+            order: 3 !important;
+            margin: 20px auto 30px !important;
+            width: 100% !important;
+            max-width: 420px !important;
+          }
+          .reach-more-desc {
+            order: 4 !important;
+            text-align: center !important;
+            margin: 0 auto 24px !important;
+          }
+          .reach-more-buttons-container {
+            order: 5 !important;
+            justify-content: center !important;
           }
         }
-      `}</style>
+      `}} />
     </section>
   );
 }

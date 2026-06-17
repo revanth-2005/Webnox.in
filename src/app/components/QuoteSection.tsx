@@ -25,7 +25,7 @@ export default function QuoteSection() {
 
       <div className="relative max-w-7xl w-full grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-center z-10">
         {/* LEFT: Text Content */}
-        <div className="flex flex-col items-start text-left min-w-0">
+        <div className="quote-left-content flex flex-col items-start text-left min-w-0">
           {/* Badge: + Smart. Fast. Scalable. */}
           <div className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 bg-[#0068F7]/10 border border-[#0068F7]/35 mb-8 shadow-[0_0_15px_rgba(0,104,247,0.1)]">
             <span className="text-xs font-semibold text-[#4DA6FF] tracking-wider">
@@ -60,12 +60,9 @@ export default function QuoteSection() {
         </div>
 
         {/* RIGHT: Quote Form with Glow Beam */}
-        <div className="w-[540px] max-w-full mx-auto relative" style={{ paddingTop: '260px' }}>
+        <div className="quote-form-container w-[540px] max-w-full mx-auto relative">
           {/* Glow beam image — absolute behind card, upper cone shows above card */}
-          <div
-            className="absolute left-1/2 -translate-x-1/2 pointer-events-none z-10"
-            style={{ top: '-30px', width: '700px', height: '660px' }}
-          >
+          <div className="quote-glow-beam absolute left-1/2 -translate-x-1/2 pointer-events-none z-10">
             <Image
               src="/quatsectweb.png"
               alt="Glow Beam"
@@ -76,7 +73,7 @@ export default function QuoteSection() {
           </div>
 
           {/* Glassmorphic Form Card — overlays on lower portion of glow image */}
-          <div className="w-full bg-[#080f24]/20 backdrop-blur-sm border border-[#1b2b52]/50 rounded-[32px] p-10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.4)] relative z-20">
+          <div className="quote-form-card w-full bg-[#080f24]/20 backdrop-blur-sm border border-[#1b2b52]/50 rounded-[32px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.4)] relative z-20">
             {/* Header */}
             <h3 className="text-xl md:text-2xl font-semibold text-white text-center mb-2 tracking-tight">
               Request a Free Quote
@@ -126,6 +123,74 @@ export default function QuoteSection() {
           </div>
         </div>
       </div>
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        .quote-form-container {
+          padding-top: 260px;
+        }
+        .quote-glow-beam {
+          top: -30px;
+          width: 700px;
+          height: 660px;
+        }
+        .quote-form-card {
+          padding: 40px;
+        }
+        .quote-form-card input {
+          padding-left: 24px !important;
+          padding-right: 24px !important;
+        }
+        .quote-form-card textarea {
+          padding: 16px 24px !important;
+        }
+        @media (max-width: 1023px) {
+          #quote {
+            padding: 60px 20px !important;
+          }
+          .quote-left-content {
+            align-items: center !important;
+            text-align: center !important;
+          }
+          .quote-left-content h2 {
+            text-align: center !important;
+            font-size: 38px !important;
+          }
+          .quote-left-content p {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .quote-form-container {
+            padding-top: 100px;
+          }
+          .quote-glow-beam {
+            top: -20px;
+            width: 480px;
+            height: 400px;
+          }
+          .quote-form-card {
+            padding: 30px 20px;
+            border-radius: 24px;
+          }
+        }
+        @media (max-width: 639px) {
+          .quote-left-content h2 {
+            font-size: 28px !important;
+          }
+          .quote-form-container {
+            padding-top: 60px;
+          }
+          .quote-glow-beam {
+            top: -15px;
+            width: 320px;
+            height: 280px;
+          }
+          .quote-form-card {
+            padding: 24px 16px;
+            border-radius: 20px;
+          }
+        }
+      `}} />
     </section>
   );
 }
