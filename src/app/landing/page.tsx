@@ -14,6 +14,7 @@ import TechPuzzleSection from "../components/TechPuzzleSection";
 import IdentitySection from "../components/IdentitySection";
 import OfferSection from "../components/OfferSection";
 import ProcessSection from "../components/ProcessSection";
+import ContactSection from "../components/ContactSection";
 
 export default function LandingPage() {
   return (
@@ -31,6 +32,7 @@ export default function LandingPage() {
       <IdentitySection />
       <OfferSection />
       <ProcessSection />
+      <ContactSection />
 
       {/* ─────────────── FOOTER ─────────────── */}
       <Footer />
