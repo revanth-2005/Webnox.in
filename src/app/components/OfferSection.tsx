@@ -44,6 +44,74 @@ export default function OfferSection() {
         position: "relative",
       }}
     >
+      {/* MOBILE HEADER: Shown above the mockup image on mobile */}
+      <div className="offer-header-mobile">
+        {/* Badge: What We Offer */}
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "6px",
+            border: "1px solid rgba(255, 255, 255, 0.4)",
+            borderRadius: "9999px",
+            padding: "6px 18px",
+            backgroundColor: "rgba(255, 255, 255, 0.06)",
+            color: "#ffffff",
+            fontSize: "12px",
+            fontWeight: 600,
+            marginBottom: "20px",
+            letterSpacing: "0.02em",
+            fontFamily: "'Outfit', 'Inter', sans-serif",
+          }}
+        >
+          <span style={{ fontSize: "14px", fontWeight: "bold" }}>+</span> What We Offer
+        </div>
+
+        {/* Title with custom Web Design vertical gradient */}
+        <h2
+          style={{
+            fontSize: "clamp(28px, 3vw, 44px)",
+            fontWeight: 700,
+            color: "#ffffff",
+            lineHeight: 1.2,
+            letterSpacing: "-0.01em",
+            margin: "0 0 20px 0",
+            fontFamily: "'Outfit', 'Inter', sans-serif",
+          }}
+        >
+          Our Range Of{" "}
+          <span
+            style={{
+              background: "linear-gradient(180deg, #48EDFF 0%, #005AD7 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              display: "inline-block",
+            }}
+          >
+            Web Design
+          </span>{" "}
+          Services
+        </h2>
+
+        {/* Subtitle */}
+        <p
+          style={{
+            fontSize: "clamp(13.5px, 0.95vw, 15px)",
+            fontWeight: 300,
+            color: "#A5B4FC",
+            lineHeight: 1.7,
+            maxWidth: "520px",
+            marginBottom: "32px",
+            opacity: 0.9,
+            letterSpacing: "0.01em",
+            fontFamily: "'Outfit', 'Inter', sans-serif",
+          }}
+        >
+          All The Web Designs Delivered By Webnox Technologies, Coimbatore Are Mobile Responsive Websites With Great User Experience.
+        </p>
+      </div>
+
       {/* Container holding top split layout */}
       <div
         className="offer-grid"
@@ -55,7 +123,7 @@ export default function OfferSection() {
           gap: "60px",
           alignItems: "center",
           zIndex: 2,
-          marginBottom: "80px",
+          marginBottom: "36px",
         }}
       >
         {/* LEFT: Composite Mockups Image */}
@@ -90,70 +158,73 @@ export default function OfferSection() {
             alignItems: "flex-start",
           }}
         >
-          {/* Badge: What We Offer */}
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px",
-              border: "1px solid rgba(72, 237, 255, 0.4)",
-              borderRadius: "9999px",
-              padding: "6px 18px",
-              backgroundColor: "rgba(72, 237, 255, 0.06)",
-              color: "#48EDFF",
-              fontSize: "12px",
-              fontWeight: 600,
-              marginBottom: "20px",
-              letterSpacing: "0.02em",
-              fontFamily: "'Outfit', 'Inter', sans-serif",
-            }}
-          >
-            <span style={{ fontSize: "14px", fontWeight: "bold" }}>+</span> What We Offer
-          </div>
-
-          {/* Title with custom Web Design vertical gradient */}
-          <h2
-            style={{
-              fontSize: "clamp(28px, 3vw, 44px)",
-              fontWeight: 700,
-              color: "#ffffff",
-              lineHeight: 1.2,
-              letterSpacing: "-0.01em",
-              margin: "0 0 20px 0",
-              fontFamily: "'Outfit', 'Inter', sans-serif",
-            }}
-          >
-            Our Range Of{" "}
-            <span
+          {/* DESKTOP HEADER: Shown on the right of mockup on desktop */}
+          <div className="offer-header-desktop">
+            {/* Badge: What We Offer */}
+            <div
               style={{
-                background: "linear-gradient(180deg, #48EDFF 0%, #005AD7 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                display: "inline-block",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                border: "1px solid rgba(255, 255, 255, 0.4)",
+                borderRadius: "9999px",
+                padding: "6px 18px",
+                backgroundColor: "rgba(255, 255, 255, 0.06)",
+                color: "#ffffff",
+                fontSize: "12px",
+                fontWeight: 600,
+                marginBottom: "20px",
+                letterSpacing: "0.02em",
+                fontFamily: "'Outfit', 'Inter', sans-serif",
               }}
             >
-              Web Design
-            </span>{" "}
-            Services
-          </h2>
+              <span style={{ fontSize: "14px", fontWeight: "bold" }}>+</span> What We Offer
+            </div>
 
-          {/* Subtitle */}
-          <p
-            style={{
-              fontSize: "clamp(13.5px, 0.95vw, 15px)",
-              fontWeight: 300,
-              color: "#A5B4FC",
-              lineHeight: 1.7,
-              maxWidth: "520px",
-              marginBottom: "32px",
-              opacity: 0.9,
-              letterSpacing: "0.01em",
-              fontFamily: "'Outfit', 'Inter', sans-serif",
-            }}
-          >
-            All The Web Designs Delivered By Webnox Technologies, Coimbatore Are Mobile Responsive Websites With Great User Experience.
-          </p>
+            {/* Title with custom Web Design vertical gradient */}
+            <h2
+              style={{
+                fontSize: "clamp(28px, 3vw, 44px)",
+                fontWeight: 700,
+                color: "#ffffff",
+                lineHeight: 1.2,
+                letterSpacing: "-0.01em",
+                margin: "0 0 20px 0",
+                fontFamily: "'Outfit', 'Inter', sans-serif",
+              }}
+            >
+              Our Range Of{" "}
+              <span
+                style={{
+                  background: "linear-gradient(180deg, #48EDFF 0%, #005AD7 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  display: "inline-block",
+                }}
+              >
+                Web Design
+              </span>{" "}
+              Services
+            </h2>
+
+            {/* Subtitle */}
+            <p
+              style={{
+                fontSize: "clamp(13.5px, 0.95vw, 15px)",
+                fontWeight: 300,
+                color: "#A5B4FC",
+                lineHeight: 1.7,
+                maxWidth: "520px",
+                marginBottom: "32px",
+                opacity: 0.9,
+                letterSpacing: "0.01em",
+                fontFamily: "'Outfit', 'Inter', sans-serif",
+              }}
+            >
+              All The Web Designs Delivered By Webnox Technologies, Coimbatore Are Mobile Responsive Websites With Great User Experience.
+            </p>
+          </div>
 
           {/* Services Category List Grid */}
           <div
@@ -172,17 +243,20 @@ export default function OfferSection() {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "12px",
-                  padding: "14px 20px",
+                  gap: "14px",
+                  padding: "16px 22px",
                   borderRadius: "16px",
-                  backgroundColor: "rgba(8, 17, 36, 0.45)",
-                  border: "1px solid rgba(255, 255, 255, 0.06)",
-                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+                  backgroundColor: "rgba(8, 17, 36, 0.4)",
+                  border: "1px solid rgba(255, 255, 255, 0.08)",
+                  borderTop: "1px solid rgba(255, 255, 255, 0.12)",
+                  borderLeft: "1px solid rgba(255, 255, 255, 0.12)",
+                  backdropFilter: "blur(12px)",
+                  boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.2)",
                   transition: "all 0.3s ease",
                   cursor: "pointer",
                 }}
               >
-                <div style={{ width: "24px", height: "24px", position: "relative", flexShrink: 0 }}>
+                <div style={{ width: "42px", height: "42px", position: "relative", flexShrink: 0 }}>
                   <Image
                     src={srv.iconSrc}
                     alt={srv.name}
@@ -193,7 +267,7 @@ export default function OfferSection() {
                 <span
                   style={{
                     color: "#ffffff",
-                    fontSize: "clamp(13px, 0.9vw, 14.5px)",
+                    fontSize: "clamp(14.5px, 1.0vw, 16px)",
                     fontWeight: 500,
                     fontFamily: "'Outfit', 'Inter', sans-serif",
                     letterSpacing: "0.01em",
@@ -207,67 +281,73 @@ export default function OfferSection() {
         </div>
       </div>
 
-      {/* BOTTOM: Horizontal row of partner logos */}
+      {/* BOTTOM: Awards & Partners Single Image */}
       <div
         className="offer-logos-container"
         style={{
           width: "100%",
-          maxWidth: "1240px",
+          maxWidth: "1020px",
           borderTop: "1px solid rgba(255, 255, 255, 0.08)",
-          paddingTop: "48px",
+          paddingTop: "24px",
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "center",
           alignItems: "center",
-          flexWrap: "wrap",
-          gap: "24px 16px",
           zIndex: 2,
         }}
       >
-        {LOGOS.map((logo, index) => (
-          <div
-            key={logo}
-            className="partner-logo-wrapper"
-            style={{
-              position: "relative",
-              height: "44px",
-              width: "12%",
-              minWidth: "110px",
-              transition: "transform 0.3s ease, opacity 0.3s ease",
-              opacity: 0.82,
-              cursor: "pointer",
-            }}
-          >
-            <Image
-              src={logo}
-              alt={`Partner award ${index + 1}`}
-              fill
-              className="object-contain"
-            />
-          </div>
-        ))}
+        <div
+          className="partner-frame-wrapper"
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "150px",
+          }}
+        >
+          <Image
+            src="/landing page/what we offer/Frame 2147223145.png"
+            alt="Awards & Partners"
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
       </div>
 
       {/* Styled styles tag for responsive styles and hover transitions */}
       <style dangerouslySetInnerHTML={{
         __html: `
+        .offer-header-mobile {
+          display: none;
+        }
+        .offer-header-desktop {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
         .service-card-item:hover {
-          background-color: rgba(72, 237, 255, 0.08) !important;
-          border-color: rgba(72, 237, 255, 0.35) !important;
+          background-color: rgba(255, 255, 255, 0.08) !important;
+          border-color: rgba(255, 255, 255, 0.35) !important;
           transform: translateY(-2px);
           box-shadow: 0 8px 25px rgba(0, 90, 215, 0.15) !important;
-        }
-        .partner-logo-wrapper:hover {
-          transform: scale(1.08);
-          opacity: 1 !important;
         }
         @media (max-width: 1023px) {
           #offer {
             padding: 70px 20px 50px 20px !important;
           }
+          .offer-header-mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 24px;
+          }
+          .offer-header-desktop {
+            display: none !important;
+          }
           .offer-grid {
             grid-template-columns: 1fr !important;
             gap: 40px !important;
-            margin-bottom: 50px !important;
+            margin-bottom: 30px !important;
           }
           .offer-left-mockup {
             max-width: 500px;
@@ -282,12 +362,8 @@ export default function OfferSection() {
             margin-left: auto;
             margin-right: auto;
           }
-          .offer-logos-container {
-            justify-content: center !important;
-            gap: 32px 24px !important;
-          }
-          .partner-logo-wrapper {
-            width: 20% !important;
+          .partner-frame-wrapper {
+            height: 110px !important;
           }
         }
         @media (max-width: 639px) {
@@ -298,10 +374,8 @@ export default function OfferSection() {
             grid-template-columns: 1fr !important;
             gap: 12px !important;
           }
-          .partner-logo-wrapper {
-            width: 28% !important;
-            min-width: 90px !important;
-            height: 36px !important;
+          .partner-frame-wrapper {
+            height: 75px !important;
           }
         }
       `}} />
