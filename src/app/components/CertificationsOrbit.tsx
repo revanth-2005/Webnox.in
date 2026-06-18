@@ -166,37 +166,37 @@ export default function CertificationsOrbit() {
           style={{
             position: "absolute",
             inset: "35%",
+            border: "1px solid rgba(77, 195, 254, 0.5)",
+            borderRadius: "50%",
           }}
-        >
-          <Image src="/circle-1.png" alt="" fill className="object-contain" />
-        </div>
+        />
         {/* Ring 2 */}
         <div
           style={{
             position: "absolute",
             inset: "23%",
+            border: "1px solid rgba(77, 195, 254, 0.5)",
+            borderRadius: "50%",
           }}
-        >
-          <Image src="/circle-2.png" alt="" fill className="object-contain" />
-        </div>
+        />
         {/* Ring 3 */}
         <div
           style={{
             position: "absolute",
             inset: "11%",
+            border: "1px solid rgba(77, 195, 254, 0.5)",
+            borderRadius: "50%",
           }}
-        >
-          <Image src="/circle-3.png" alt="" fill className="object-contain" />
-        </div>
+        />
         {/* Ring 4 (Outer) */}
         <div
           style={{
             position: "absolute",
             inset: "0%",
+            border: "1px solid rgba(77, 195, 254, 0.5)",
+            borderRadius: "50%",
           }}
-        >
-          <Image src="/circle-4.png" alt="" fill className="object-contain" />
-        </div>
+        />
       </div>
 
       {/* 2. Glow effect behind center logo */}

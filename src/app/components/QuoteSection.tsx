@@ -78,7 +78,7 @@ export default function QuoteSection() {
             <h3 className="text-xl md:text-2xl font-semibold text-white text-center mb-2 tracking-tight">
               Request a Free Quote
             </h3>
-            <p className="text-xs md:text-sm font-light text-[#8c9fc2] text-center mb-8 leading-relaxed max-w-[260px] mx-auto">
+            <p className="text-xs md:text-sm font-light text-[#8c9fc2] text-center mb-8 leading-relaxed md:max-w-none max-w-[260px] mx-auto">
               Enter your details we will connect you with the right person
             </p>
 

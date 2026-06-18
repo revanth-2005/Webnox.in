@@ -46,7 +46,7 @@ export default function AboutSection() {
     <section
       id="about"
       style={{
-        background: '#ffffff',
+        background: '#000714',
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
@@ -71,13 +71,26 @@ export default function AboutSection() {
 
           {/* Built To Scale Badge */}
           <div style={{ marginBottom: '32px' }}>
-            <Image
-              src="/built-to-scale.png"
-              alt="Built To Scale"
-              width={169}
-              height={36}
-              className="object-contain"
-            />
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                border: '1px solid rgba(0, 104, 247, 0.35)',
+                borderRadius: '9999px',
+                padding: '6px 18px',
+                background: 'rgba(0, 104, 247, 0.1)',
+                fontFamily: "'Inter', sans-serif",
+                fontSize: '13px',
+                fontWeight: 600,
+                color: '#ffffff',
+                width: 'fit-content',
+                boxShadow: '0 0 15px rgba(0, 104, 247, 0.1)',
+                letterSpacing: '0.05em',
+              }}
+            >
+              <span style={{ color: '#4BC3FE' }}>✦</span> BUILT TO SCALE
+            </div>
           </div>
 
           {/* Main heading */}
@@ -86,7 +99,7 @@ export default function AboutSection() {
             fontSize: 'clamp(28px, 3.0vw, 44px)',
             fontWeight: 800,
             lineHeight: 1.05,
-            color: '#0a0a0a',
+            color: '#ffffff',
             letterSpacing: '-0.02em',
             margin: '0 0 14px 0',
           }}>
@@ -104,7 +117,7 @@ export default function AboutSection() {
             fontFamily: "'Stack Sans Headline', sans-serif",
             fontSize: 'clamp(13px, 0.9vw, 15px)',
             fontWeight: 600,
-            color: '#111',
+            color: '#ffffff',
             margin: '0 0 18px 0',
             lineHeight: 1.4,
           }}>
@@ -115,7 +128,7 @@ export default function AboutSection() {
             fontFamily: "'Stack Sans Headline', sans-serif",
             fontSize: 'clamp(12px, 0.8vw, 13.5px)',
             fontWeight: 400,
-            color: '#555',
+            color: '#a3a3a3',
             lineHeight: 1.75,
             maxWidth: '460px',
             margin: 0,
