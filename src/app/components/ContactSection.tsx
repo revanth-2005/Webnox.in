@@ -22,7 +22,7 @@ export default function ContactSection() {
       {/* Background Image */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <Image
-          src="/landing page/Bg.png"
+          src="/landing page/Bg.webp"
           alt="Background"
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}

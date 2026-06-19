@@ -64,7 +64,7 @@ export default function QuoteSection() {
           {/* Glow beam image — absolute behind card, upper cone shows above card */}
           <div className="quote-glow-beam absolute left-1/2 -translate-x-1/2 pointer-events-none z-10">
             <Image
-              src="/quatsectweb.png"
+              src="/quatsectweb.webp"
               alt="Glow Beam"
               fill
               className="object-contain object-top"

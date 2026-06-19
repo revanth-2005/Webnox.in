@@ -52,7 +52,7 @@ export default function ReachMoreSection() {
             }}
           >
             <Image
-              src="/reachmore.png"
+              src="/reachmore.webp"
               alt="Reach More Customers Dashboard"
               fill
               priority

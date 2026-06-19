@@ -22,7 +22,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       {/* ── Background Image ── */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/footer-bg.png" alt="" className={styles.footerBgImg} />
+      <img src="/footer-bg.webp" alt="" className={styles.footerBgImg} />
 
       {/* ── Main Grid ── */}
       <div className={styles.footerInner}>

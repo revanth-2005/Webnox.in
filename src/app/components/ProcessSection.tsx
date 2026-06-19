@@ -9,6 +9,50 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+interface LazyIframeProps extends React.IframeHTMLAttributes<HTMLIFrameElement> {
+  src: string;
+  title: string;
+}
+
+function LazyIframe({ src, title, style, ...props }: LazyIframeProps) {
+  const [isInView, setIsInView] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+      setIsInView(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "800px" }
+    );
+    const el = containerRef.current;
+    if (el) {
+      observer.observe(el);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={containerRef} style={{ width: "100%", height: "100%", backgroundColor: "#0f172a" }}>
+      {isInView ? (
+        <iframe
+          src={src}
+          title={title}
+          style={style}
+          {...props}
+        />
+      ) : null}
+    </div>
+  );
+}
+
 interface PhoneFrameProps {
   children: React.ReactNode;
   style?: React.CSSProperties;
@@ -515,7 +559,7 @@ export default function ProcessSection() {
               }}
             >
               <div style={{ width: "100%", height: "100%", overflow: "hidden", backgroundColor: "#ffffff" }}>
-                <iframe
+                <LazyIframe
                   src="https://www.ajknursing.edu.in/"
                   title="AJK Nursing College"
                   scrolling="no"
@@ -541,7 +585,7 @@ export default function ProcessSection() {
               }}
             >
               <div style={{ width: "100%", height: "100%", overflow: "hidden", backgroundColor: "#ffffff" }}>
-                <iframe
+                <LazyIframe
                   src="https://kovaikitchenhomemade.com/"
                   title="Kovai Kitchen"
                   scrolling="no"
@@ -566,7 +610,7 @@ export default function ProcessSection() {
               }}
             >
               <div style={{ width: "100%", height: "100%", overflow: "hidden", backgroundColor: "#ffffff" }}>
-                <iframe
+                <LazyIframe
                   src="https://learnryce.in/"
                   title="Learnryce"
                   scrolling="no"
@@ -767,7 +811,7 @@ export default function ProcessSection() {
                 }}
               >
                 <div style={{ width: "100%", height: "100%", overflow: "hidden", backgroundColor: "#ffffff" }}>
-                  <iframe
+                  <LazyIframe
                     src="https://rathz.com/"
                     title="Rathz Website"
                     scrolling="no"
@@ -895,7 +939,7 @@ export default function ProcessSection() {
                 }}
               >
                 <div style={{ width: "100%", height: "100%", overflow: "hidden", backgroundColor: "#ffffff" }}>
-                  <iframe
+                  <LazyIframe
                     src="https://www.webnoxdigital.com/"
                     title="Webnox Digital"
                     scrolling="no"
@@ -1023,7 +1067,7 @@ export default function ProcessSection() {
                 }}
               >
                 <div style={{ width: "100%", height: "100%", overflow: "hidden", backgroundColor: "#ffffff" }}>
-                  <iframe
+                  <LazyIframe
                     src="https://sandfoxsoft.com/"
                     title="sandfoxsoft"
                     scrolling="no"
@@ -1153,7 +1197,7 @@ export default function ProcessSection() {
                 }}
               >
                 <div style={{ width: "100%", height: "100%", overflow: "hidden", backgroundColor: "#ffffff" }}>
-                  <iframe
+                  <LazyIframe
                     src="https://kovaikitchenhomemade.com/"
                     title="Kovai Kitchen"
                     scrolling="no"

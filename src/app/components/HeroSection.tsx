@@ -313,7 +313,7 @@ export default function HeroSection() {
       {/* Background chevrons/W shapes */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none z-0 animate-bg-chevrons"
-        style={{ backgroundImage: "url('/W bg 1.png')", top: '75px' }}
+        style={{ backgroundImage: "url('/W bg 1.webp')", top: '75px' }}
       />
 
       {/* Header / Navbar */}
@@ -725,20 +725,20 @@ export default function HeroSection() {
             left: '50%',
             transform: 'translateX(-50%)',
           }}>
-            <Image src="/showcase-bg-glow.png" alt="" fill className="object-contain object-bottom" priority />
+            <Image src="/showcase-bg-glow.webp" alt="" fill className="object-contain object-bottom" priority />
           </div>
         </div>
         <div className="absolute left-[8%] bottom-[-21%] w-[84%] h-[71.5%] z-10 animate-rock-base">
-          <Image src="/Rock.png" alt="Rock pedestal base" fill className="object-contain object-bottom" priority />
+          <Image src="/Rock.webp" alt="Rock pedestal base" fill className="object-contain object-bottom" priority />
         </div>
         <div className="absolute left-[23.2%] bottom-[-0.4%] w-[44.5%] h-[56.4%] z-20 animate-laptop">
           <Image src="/Gadgets.png" alt="Laptop showcasing website" fill className="object-contain" priority />
         </div>
         <div className="absolute left-[31.75%] bottom-[-19%] w-[50.5%] h-[33.5%] z-25 animate-rock-up">
-          <Image src="/Rock up.png" alt="Rock upper layer" fill className="object-contain object-bottom" priority />
+          <Image src="/Rock up.webp" alt="Rock upper layer" fill className="object-contain object-bottom" priority />
         </div>
         <div className="absolute left-[48.7%] bottom-[-7%] w-[17.3%] h-[63%] z-20 animate-mobile">
-          <Image src="/Mobile1.png" alt="Mobile device showcasing website layout" fill className="object-contain" priority />
+          <Image src="/Mobile1.webp" alt="Mobile device showcasing website layout" fill className="object-contain" priority />
         </div>
         <div className="absolute left-[69%] bottom-[6.5%] w-[8.9%] h-[17.8%] z-24 animate-glow-logo">
           <Image src="/Glow Logo.png" alt="Glowing Webnox cube logo" fill className="object-contain" priority />
