@@ -95,6 +95,7 @@
 .logoWrap {
   margin-bottom: 14px;
   display: inline-block;
+  cursor: pointer;
 }
 
 /* Push col 2-5 content DOWN so their titles align with the description text.

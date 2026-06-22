@@ -202,7 +202,7 @@ export default function BrandBuildSection() {
               width: "130px",
               height: "130px",
               pointerEvents: "none",
-              opacity: 0.85,
+              opacity: 0.25,
             }}
           >
             <Image
@@ -472,7 +472,8 @@ export default function BrandBuildSection() {
         </div>
       </div>
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .brand-build-card {
           padding: 48px;
           height: 480px;

@@ -31,7 +31,10 @@ export default function Footer() {
           {/* ─── COL 1: Logo + Description + Quick Links + Working Hours ─── */}
           <div>
             {/* Animated Logo */}
-            <div className={styles.logoWrap}>
+            <div 
+              className={`${styles.logoWrap} cursor-pointer`} 
+              onClick={() => window.location.href = "/"}
+            >
               <AnimatedLogo height={36} delay={400} />
             </div>
 

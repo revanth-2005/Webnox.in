@@ -44,7 +44,7 @@ export default function HeroSection() {
   if (!mounted) return null;
 
   return (
-    <main className="relative min-h-screen bg-black text-white flex flex-col items-center justify-between overflow-hidden font-sans selection:bg-blue-600/30 selection:text-white pt-[58px]">
+    <main className="relative min-h-screen bg-[#01010C] text-white flex flex-col items-center justify-between overflow-hidden font-sans selection:bg-blue-600/30 selection:text-white pt-[58px]">
       <style dangerouslySetInnerHTML={{
         __html: `
       @keyframes spin {
@@ -327,7 +327,11 @@ export default function HeroSection() {
         }}
       >
         <div className="flex items-center justify-between md:justify-start w-full md:w-auto" style={{ gap: '8px' }}>
-          <div className="flex items-center select-none" style={{ paddingRight: '8px' }}>
+          <div 
+            onClick={() => window.location.href = "/"} 
+            className="flex items-center select-none cursor-pointer" 
+            style={{ paddingRight: '8px' }}
+          >
             <AnimatedLogo height={36} delay={800} />
           </div>
           <div className="hidden md:block" style={{
